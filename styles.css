@@ -1,0 +1,154 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header and navigation */
+header {
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Home content */
+.home-content, .bio-content, .contact-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.wrapper {
+    height: 100px;
+    width: 360px;
+    position: relative;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    cursor: default;
+    animation: animate 1.5s linear infinite;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.wrapper .display, .wrapper span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .display {
+    z-index: 999;
+    height: 85px;
+    width: 345px;
+    background: #1b1b1b;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.display #time {
+    line-height: 85px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.contact-content table {
+    margin: 0 auto; /* Centers the table horizontally */
+    border-collapse: collapse; /* Optional: for better spacing between table cells */
+}
+
+.contact-content th, .contact-content td {
+    padding: 10px; /* Optional: adds padding to table cells for better readability */
+    border: 1px solid #ccc; /* Optional: adds a border to table cells */
+}
+
+.portfolio-gallery {
+    padding-bottom: 50px;
+}
+
+/* Portfolio gallery using Flexbox */
+.portfolio-gallery .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.portfolio-gallery h2 {
+    text-align: center;
+}
+
+.portfolio-gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: transform 0.3s ease, border 0.3s ease; /* Smooth transition for scaling and border color */
+}
+
+.portfolio-gallery img:hover {
+    transform: scale(1.1); /* Scales the image to 110% on hover */
+    border: 2px solid orange; /* Changes border color on hover */
+}
+
+/* Responsive design with Flexbox */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .portfolio-gallery img {
+        width: 100%;
+    }
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
